@@ -124,6 +124,7 @@ class ToolsSettings(BaseSettings):
 class ApiKeysSettings(BaseSettings):
     """Configuration centralisée des clés API pour les différents services."""
     openai: Optional[str] = None
+    rapid_api: Optional[str] = None  # Ajout du champ manquant
     # Ajoutez d'autres clés API selon vos besoins
 
     def get(self, service_name: str) -> Optional[str]:
@@ -213,11 +214,6 @@ class Settings(BaseSettings):
     unipile_dsn: str         = Field("api.unipile.com", env="UNIPILE_DSN")
     whatsapp_account_id: Optional[str] = Field(None, env="WA_ACCOUNTID")
 
-    @property
-    def rapid_api_key(self) -> Optional[str]:
-        """Méthode de compatibilité pour l'accès à rapid_api_key"""
-        return self.api_keys.rapid_api
-        
     def check_api_keys(self) -> None:
         """
         Vérifie et affiche des informations sur les clés API manquantes.
@@ -229,14 +225,10 @@ class Settings(BaseSettings):
             logger.warning(f"Les clés API suivantes sont manquantes ou vides: {', '.join(missing_keys)}")
             
             # Conseils spécifiques pour chaque clé
-            if 'rapid_api' in missing_keys:
-                logger.warning("La clé RAPID_API_KEY est requise pour l'outil youtube_transcript")
             if 'openai' in missing_keys:
                 logger.warning("La clé OPENAI_API_KEY est requise pour le fonctionnement du LLM et les transcriptions audio/vidéo")
-            if 'unipile' in missing_keys:
-                logger.warning("La clé UNIPILE_API_KEY est requise pour les outils de communication WhatsApp")
-        else:
-            logger.info("Toutes les clés API configurées sont présentes")
+            else:
+                logger.info("Toutes les clés API configurées sont présentes")
         
         # Vérifier les outils activés
         if not self.tools.enabled:
@@ -266,8 +258,6 @@ def get_settings() -> Settings:
     
     # Charger explicitement les clés API
     settings.api_keys.openai = os.getenv('OPENAI_API_KEY')
-    settings.api_keys.rapid_api = os.getenv('RAPID_API_KEY')
-    settings.api_keys.unipile = os.getenv('UNIPILE_API_KEY')
     
     # Charger le DSN Unipile
     unipile_dsn = os.getenv('UNIPILE_DSN')

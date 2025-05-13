@@ -318,8 +318,7 @@ async def health_check():
     Simple health check endpoint to verify API is running.
     """
     return {
-        "status": "healthy",
-        "version": settings.version
+        "status": "healthy"
     }
 
 # ============== ENDPOINTS DE DÉBOGAGE ===============
