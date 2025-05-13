@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Processus de Débogage
+
+## 1. Analyse initiale
+1. **Collecte du contexte**  
+   - Description du bug / reproduction.  
+   - Version de la stack (LangChain, Python…).  
+2. **Récupération des logs et erreurs**  
+   - Extrait de la trace d’erreur.  
+   - Fichiers ou endpoints concernés.
+
+## 2. Hypothèses
+- Lister 2–3 causes possibles, p. ex. :
+  1. Configuration manquante du LLM  
+  2. Mauvais format JSON en entrée  
+  3. Problème de dépendance ou de version
+## 3. Tests ciblés
+- Pour chaque hypothèse :  
+  - Description du test à réaliser.  
+  - Données d’entrée minimales.
+
+## 4. Proposition de correctif
+Pour l’hypothèse confirmée :
+1. **Fichier(s) à modifier**  
+2. **Changements précis** (fonctions / classes)  
+3. **Étapes de validation** (tests à écrire, commandes à lancer)
+
+## 5. Documentation du débogage
+- Ajouter un résumé dans `docs/Process/Debugging.md`.  
+- Mettre à jour `docs/Process/LOGS.md` avec :  
+  - Scénario d’erreur  
+  - Messages de log avant/après correction  

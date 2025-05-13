@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Processus de développement
+
+Cette vue d’ensemble décrit les règles générales et oriente vers les documents spécialisés selon le besoin :
+
+---
+
+## A. Préférences générales de développement
+
+- Fournir **des réponses binaires** (oui/non, succès/échec) lorsque c’est possible.  
+- Être **concis** et se concentrer sur **l’essentiel**, sans générer trop de code.  
+- Proposer des **étapes claires** et **applicables** pour chaque tâche.  
+- **Réutiliser** le code existant avant d’en générer de nouveau.  
+- En cas de bug, si les **ressources** ou la **documentation** manquent, **demander d’abord l’avis** de l’utilisateur ou **effectuer une recherche Web** (MCP “WebScrawler”).
+
+---
+
+## B. Choix du mode de travail
+
+> **À chaque session**, déterminer l’un des deux modes :
+>
+> 1. **Débogage**  
+>    - Suivre la procédure détaillée dans [Debugging.md](mdc:docs/Process/Debugging.md)
+> 2. **Nouvelle fonctionnalité**  
+>    - Suivre la procédure détaillée dans [Build.md](mdc:docs/Process/Build.md)
+
+---
+
+## C. Avant d’écrire du code
+
+Quel que soit le mode, toujours résumer **dans le chat** ou l’issue tracker :
+
+1. **Objectif métier**  
+2. **Contraintes techniques** (stack, bonnes pratiques)
+
+---
+
+## D. Tâches et documentation associée
+
+- **Planification & suivi** :  
+  - Remplir le template [Task.md](mdc:docs/Task.md) pour chaque ticket.  
+- **Logging & monitoring** :  
+  - Compléter le catalogue dans [Logs.md](mdc:docs/Logs.md)
+
+---
+
+> Pour plus de détails, consultez les fichiers de procédures et les templates correspondants dans `docs/Process/`.  
