@@ -1,1 +1,25 @@
-wheel @ file:///opt/homebrew/Cellar/python%403.13/3.13.2/libexec/wheel-0.45.1-py3-none-any.whl#sha256=b9235939e2096903717cb6bfc132267f8a7e46deb2ec3ef9c5e234ea301795d0
+# Dépendances principales
+langchain>=0.0.312
+langchain-community>=0.1.0
+fastapi>=0.85.0
+uvicorn[standard]>=0.18.0
+pydantic>=1.10.0
+python-dotenv>=0.21.0
+pytest>=7.2.0
+
+# Extraction de médias
+# PDF
+PyPDF2>=3.0.0
+
+# Images (OCR)
+pytesseract>=0.3.10
+Pillow>=9.0.0
+
+# Audio/Vidéo
+openai>=1.0.0  # Pour l'API Whisper
+moviepy>=1.0.3  # Pour l'extraction audio des vidéos
+opencv-python>=4.7.0  # Pour l'extraction de frames vidéo
+pydub>=0.25.1  # Traitement audio supplémentaire
+
+# Gestion des requêtes HTTP
+requests>=2.31.0 

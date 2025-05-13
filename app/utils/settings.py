@@ -124,8 +124,6 @@ class ToolsSettings(BaseSettings):
 class ApiKeysSettings(BaseSettings):
     """Configuration centralisée des clés API pour les différents services."""
     openai: Optional[str] = None
-    rapid_api: Optional[str] = None
-    unipile: Optional[str] = None
     # Ajoutez d'autres clés API selon vos besoins
 
     def get(self, service_name: str) -> Optional[str]:
